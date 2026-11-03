@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#133c35">
+	<meta
+		name="description"
+		content="Practice letter recognition and keyboard precision with Bubbles and KeyMagnet."
+	>
+	<title>Keyline — Typing Challenge</title>
+	<link
+		rel="icon"
+		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23133c35'/%3E%3Ctext x='10' y='29' font-size='27' fill='%23fff'%3Ek%3C/text%3E%3C/svg%3E"
+	>
+	<link rel="stylesheet" href="css/styles.css">
+	<script type="module" src="js/app.js"></script>
+</head>
+<body>
+	<header class="site-header">
+		<a href="#" class="brand" id="brand" aria-label="Keyline home">
+			<span class="brand-icon">k<span>_</span></span>
+			keyline
+			<span class="brand-dot">.</span>
+		</a>
+		<span class="header-caption">A little practice. A sharper keystroke.</span>
+		<span class="header-badge">
+			<span></span>
+			Typing challenge
+		</span>
+	</header>
+
+	<main>
+		<section id="home" aria-labelledby="home-title">
+			<div class="intro">
+				<div>
+					<p class="eyebrow">FIND YOUR RHYTHM</p>
+					<h1 id="home-title">
+						Good typing starts
+						<br>
+						with the <em>right keys.</em>
+					</h1>
+				</div>
+				<p class="intro-note">
+					Two ways to sharpen your skills.
+					<br>
+					Choose a challenge, set your pace,
+					<br>
+					and make every keystroke count.
+				</p>
+			</div>
+
+			<div class="mode-grid">
+				<article class="mode-card bubble-card">
+					<div class="mode-art bubble-art" aria-hidden="true">
+						<span class="art-label">LETTER RECOGNITION</span>
+						<i class="decor-bubble b1">A</i>
+						<i class="decor-bubble b2">K</i>
+						<i class="decor-bubble b3">S</i>
+						<i class="decor-bubble b4">D</i>
+						<i class="decor-bubble b5">F</i>
+						<span class="art-note">See it. Type it. Pop it.</span>
+					</div>
+					<div class="mode-content">
+						<p class="mode-number">01 / REACT</p>
+						<h2>Bubbles</h2>
+						<p>
+							Catch rising letters before they escape.
+							<br>
+							Keep your eyes moving and your fingers ready.
+						</p>
+						<div class="mode-facts">
+							<span>+10 per pop</span>
+							<span>6 misses end the run</span>
+						</div>
+						<div class="card-bottom">
+							<span>Build your recognition</span>
+							<button class="button dark" data-choose="bubbles">
+								Play Bubbles
+								<span aria-hidden="true">↗</span>
+							</button>
+						</div>
+					</div>
+				</article>
+
+				<article class="mode-card magnet-card">
+					<div class="mode-art magnet-art" aria-hidden="true">
+						<span class="art-label">KEYBOARD PRECISION</span>
+						<div class="mini-keys">
+							<i>A</i>
+							<i>S</i>
+							<i class="featured-key">D<span>↑</span></i>
+							<i>F</i>
+						</div>
+						<span class="art-note">One target. One precise keystroke.</span>
+					</div>
+					<div class="mode-content">
+						<p class="mode-number">02 / FOCUS</p>
+						<h2>KeyMagnet</h2>
+						<p>
+							Follow the target, find the key.
+							<br>
+							Match 30 letters before the clock runs out.
+						</p>
+						<div class="mode-facts">
+							<span>30 targets</span>
+							<span>Timed precision</span>
+						</div>
+						<div class="card-bottom">
+							<span>Build your accuracy</span>
+							<button class="button dark" data-choose="keymagnet">
+								Play KeyMagnet
+								<span aria-hidden="true">↗</span>
+							</button>
+						</div>
+					</div>
+				</article>
+			</div>
+
+			<div class="home-footer">
+				<span>
+					<kbd>A</kbd>
+					Use your keyboard, or tap the on-screen keys.
+				</span>
+				<span>Choose your pace: Easy / Medium / Hard</span>
+			</div>
+		</section>
+
+		<section id="play" hidden aria-labelledby="game-title">
+			<div class="play-heading">
+				<div>
+					<button class="back-link" id="back">← All challenges</button>
+					<h1 id="game-title" tabindex="-1">Bubbles</h1>
+					<p id="game-subtitle"></p>
+				</div>
+				<span class="session-tag" id="session-tag">Ready when you are</span>
+			</div>
+
+			<div class="play-layout">
+				<div class="game-column">
+					<div class="stat-bar" id="stats"></div>
+					<div class="arena" id="arena">
+						<div id="bubble-stage" hidden>
+							<div class="escape-line">ESCAPE LINE</div>
+							<div id="bubble-field"></div>
+						</div>
+						<div id="magnet-stage" hidden>
+							<p class="eyebrow">FIND THIS KEY</p>
+							<div class="target-key" id="target">A</div>
+							<p id="target-progress">0 of 30 targets</p>
+							<div class="progress-track">
+								<div id="progress-fill"></div>
+							</div>
+						</div>
+						<div class="arena-overlay" id="ready">
+							<div class="ready-symbol" aria-hidden="true">↵</div>
+							<h2 id="ready-title">Ready to rise?</h2>
+							<p id="ready-text"></p>
+							<button class="button dark" id="start">
+								Start game
+								<span aria-hidden="true">→</span>
+							</button>
+						</div>
+						<div class="arena-overlay result-overlay" id="results" hidden>
+							<p class="eyebrow">SESSION RESULTS</p>
+							<h2 id="result-title" tabindex="-1"></h2>
+							<p class="result-score">
+								<span id="final-score">0</span>
+								<small>points</small>
+							</p>
+							<dl id="result-stats"></dl>
+							<button class="button dark" id="play-again">
+								Play again
+								<span aria-hidden="true">↗</span>
+							</button>
+						</div>
+					</div>
+					<div class="feedback" id="feedback" role="status" aria-live="polite">
+						Choose your settings, then start.
+					</div>
+					<div class="keyboard" id="keyboard" aria-label="On-screen keyboard"></div>
+					<p class="keyboard-help">Type a letter or tap a key below the game.</p>
+				</div>
+
+				<aside class="settings-panel" aria-label="Game settings and rules">
+					<p class="eyebrow">YOUR SESSION</p>
+					<fieldset id="settings">
+						<legend class="sr-only">Game configuration</legend>
+						<label class="field-label" for="difficulty">Difficulty</label>
+						<select id="difficulty">
+							<option value="easy">Easy</option>
+							<option value="medium">Medium</option>
+							<option value="hard">Hard</option>
+						</select>
+						<p class="setting-hint" id="difficulty-hint"></p>
+						<div id="key-set-field" hidden>
+							<label class="field-label" for="key-set">Practice keys</label>
+							<select id="key-set">
+								<option value="home">Home row · A S D F J K L</option>
+								<option value="alphabet">All letters · A–Z</option>
+							</select>
+							<p class="setting-hint">The selected set determines your targets.</p>
+						</div>
+					</fieldset>
+
+					<div class="rules">
+						<h2>How to play</h2>
+						<ol id="rules-list"></ol>
+						<div class="scoring">
+							<span>Correct <b>+10</b></span>
+							<span>Incorrect <b>−5</b></span>
+						</div>
+						<p class="setting-hint">Score never falls below zero.</p>
+					</div>
+
+					<div class="control-stack">
+						<button class="button outline" id="restart" disabled>↻ Restart session</button>
+						<button class="button text-button" id="reset">Reset to defaults</button>
+					</div>
+					<p class="control-note">
+						Restart keeps your settings. Reset clears the session and restores Easy.
+					</p>
+				</aside>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<span>keyline.</span>
+		<span>One key at a time.</span>
+	</footer>
+</body>
+</html>
