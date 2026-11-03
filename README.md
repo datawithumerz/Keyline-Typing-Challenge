@@ -1,3 +1,6 @@
+## Name: `Muhammad Umer Asad`
+## Registration No# `FA24-BSE-084`
+## Section: `FA24-BSE-5B`
 # Keyline — Typing Challenge
 
 Keyline is an interactive typing practice game built with HTML, CSS and JavaScript.
@@ -68,3 +71,8 @@ video/keyline-project-explanation.mp4
 ```
 
 The recorded video size is big, so it maynot be possible to preview it in GitHub. You can download the video and watch it on your local machine.
+## LAB MID Documentation:
+filename: `FA24-BSE-084_Web_Tech_LAB_MID.pdf`
+
+
+filelink: [`FA24-BSE-084_Web_Tech_LAB_MID.pdf`](FA24-BSE-084_Web_Tech_LAB_MID.pdf)
