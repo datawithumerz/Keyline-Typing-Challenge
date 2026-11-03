@@ -56,13 +56,15 @@ The [`screenshots`](screenshots) folder contains screenshots of the project.
 
 ## Project explanation video
 
-Add your project explanation recording inside a folder named `video`.
+The project explanation video is located in the `video` folder.
 
-Recommended video filename:
+video filename: `keyline-project-explanation.mp4`
+
+
+video filesize: `18.5 MB`
 
 ```text
 video/keyline-project-explanation.mp4
 ```
 
-The recording can explain the project idea, the two game modes, the controls and
-the main features shown in the screenshots.
+The recorded video size is big, so it maynot be possible to preview it in GitHub. You can download the video and watch it on your local machine.
